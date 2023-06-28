@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País de residência</title>
+</head>
+    
+<body>
+    <h1>Consulta de residência</h1>
+    Em que país você vive? <input type="text" id="pais_id">
+    <input type="button" value="Confirmar" onclick="residencia()">
+    <div id="res"></div>
+    <script>
+        function residencia() {
+            var pais = document.querySelector('input#pais_id')
+            var res = document.querySelector ('div#res')
+            var pais_nome = String(pais.value)
+            res.innerHTML = `<p>Você mora atualmente no país ${pais_nome}.</p>`
+            if (pais_nome == 'Brasil') { 
+                res.innerHTML += `<p>Você é <strong>brasileire</strong></p>`
+            } else {
+                res.innerHTML += `<p>Você é <strong>extrangeire</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
+
